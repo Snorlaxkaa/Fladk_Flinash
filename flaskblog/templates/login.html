@@ -4,7 +4,7 @@
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">登入</legend>
+                <legend class="border-bottom mb-4">Log In</legend>
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -38,15 +38,15 @@
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
+                <small class="text-muted ml-2">
+                    <a href="{{ url_for('reset_request') }}">Forgot Password?</a>
+                </small>
             </div>
-            <small class="text-muted ml-2">
-                <a href="#">忘記密碼？</a>
-            </small>
         </form>
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            還沒有帳號？ <a class="ml-2" href="{{ url_for('register') }}">立即註冊</a>
+            Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
         </small>
     </div>
 {% endblock content %}
