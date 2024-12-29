@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant"> <!-- 添加語言屬性 -->
 <head>
-    <!-- Required meta tags -->
+    <!-- 必要的 meta 標籤 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,32 +11,33 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-        <title>Flask Blog - {{ title }}</title>
+        <title>Flask 部落格 - {{ title }}</title>
     {% else %}
-        <title>Flask Blog</title>
+        <title>Flask 部落格</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Flask Blog</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand mr-4" href="/">Flask 部落格</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="切換導航">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">首頁</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">關於我們</a>
             </div>
-            <!-- Navbar Right Side -->
+            <!-- 導航欄右側 -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">新增文章</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">帳戶</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">登出</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">登入</a>
+                <a class="nav-item nav-link" href="{{ url_for('register') }}">註冊</a>
               {% endif %}
             </div>
           </div>
@@ -59,13 +60,13 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <h3>側邊欄</h3>
+            <p class='text-muted'>你可以在這裡放置任何信息。
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <li class="list-group-item list-group-item-light">最新文章</li>
+                <li class="list-group-item list-group-item-light">公告</li>
+                <li class="list-group-item list-group-item-light">行事曆</li>
+                <li class="list-group-item list-group-item-light">其他</li>
               </ul>
             </p>
           </div>
@@ -74,8 +75,8 @@
     </main>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- 可選的 JavaScript -->
+    <!-- 先加載 jQuery，再加載 Popper.js，最後是 Bootstrap 的 JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
