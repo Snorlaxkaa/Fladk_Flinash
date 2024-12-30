@@ -1,6 +1,7 @@
 import os  # 匯入 os 模組，用於獲取環境變數
 
 # 定義應用程式的配置類
+
 class Config:
     """
     配置類：
