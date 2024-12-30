@@ -23,3 +23,4 @@ class Config:
     MAIL_USE_TLS = True  # 啟用傳輸層安全性（TLS）協議
     MAIL_USERNAME = os.environ.get('EMAIL_USER')  # 通過環境變數獲取郵件服務的用戶名
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')  # 通過環境變數獲取郵件服務的密碼
+    1
